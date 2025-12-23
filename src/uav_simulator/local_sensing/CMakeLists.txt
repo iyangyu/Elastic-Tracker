@@ -16,11 +16,17 @@ if(ENABLE_CUDA)
 #       -gencode arch=compute_50,code=sm_50;
 #       -gencode arch=compute_52,code=sm_52; 
 #       -gencode arch=compute_60,code=sm_60;
-       -gencode arch=compute_61,code=sm_61;
+ #      -gencode arch=compute_61,code=sm_61;
+        -gencode arch=compute_89,code=sm_89;
         # -gencode arch=compute_70,code=sm_70;
+        
   ) 
 
   SET(CUDA_PROPAGATE_HOST_FLAGS OFF)
+
+  set(Boost_NO_BOOST_CMAKE ON)
+  set(Boost_USE_MULTITHREADED ON)
+  set(Boost_USE_STATIC_LIBS OFF)
 
   find_package(OpenCV REQUIRED)
   find_package(Eigen3 REQUIRED)
